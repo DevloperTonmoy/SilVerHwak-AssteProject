@@ -99,6 +99,22 @@ header .nav-bottom .container .menu nav ul li a {
     position: relative;
 }
 
+header .nav-bottom .container .menu nav ul li a::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    height: 4px;
+    width: 0;
+    left: 50%;
+    bottom: -48px;
+    transition: 0.4s;
+}
+
+header .nav-bottom .container .menu nav ul li a:hover:after {
+    width: 100%;
+    transform: translateX(-50%);
+}
+
 /* header end  */
 
 main .slider {
@@ -244,10 +260,70 @@ main .gallery {
     text-align: center;
 }
 
+main .gallery .container img{
+    margin-bottom: 70px;
+}
+
 main .gallery .container .wraper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
+}
+
+main .gallery .container .wraper .gallery-item {
+    position: relative;
+}
+
+main .gallery .container .wraper .gallery-item::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0%;
+    transition: 0.4s;
+
+}
+
+main .gallery .container .wraper .gallery-item:hover::after{
+    opacity: 80%;
+}
+
+main .gallery .container .wraper .gallery-item .caption {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0%;
+    transition: 0.4s;
+}
+
+main .gallery .container .wraper .gallery-item:hover .caption{
+    opacity: 100%;
+}
+
+main .gallery .container .wraper .gallery-item .caption i {
+    text-align: center;
+    align-content: center;
+    border: 2px solid white;
+    border-radius: 100%;
+    padding: 5px;
+}
+
+main .gallery .container .wraper .gallery-item .caption h4 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+main .gallery .container .wraper .gallery-item .caption {
+    font-size: 17px;
+    font-style: italic;
 }
 
 main .gallery .container .wraper .item1 {
@@ -308,6 +384,11 @@ main .gallery .btn a {
     text-transform: uppercase;
 }
 
+main .gallery .btn a:hover{
+    background-color: transparent;
+    color: #173a69;
+}
+
 /* gallery end  */
 
 footer .number {
@@ -358,4 +439,8 @@ footer .socket {
 footer .socket .container p {
     font-size: 15px;
     padding: 30px 0;
+}
+footer .socket .container p a{
+    color: white;
+    text-decoration: underline;
 }
